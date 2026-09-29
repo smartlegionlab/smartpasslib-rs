@@ -90,6 +90,8 @@
 
 ## Installation
 
+**Minimum Rust version:** 1.85 (edition 2024)
+
 ```toml
 [dependencies]
 smartpasslib = "4.0"

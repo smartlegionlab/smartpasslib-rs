@@ -2,6 +2,7 @@
 name = "smartpasslib"
 version = "4.0.0"
 edition = "2024"
+rust-version = "1.85"
 authors = ["Alexander Suvorov (smartlegionlab) <smartlegionlab@gmail.com>"]
 description = "Smart Passwords Library for Rust: Cryptographic password generation and management without storage. Cross-platform deterministic passwords compatible with Python, JavaScript, Kotlin, Go, and C#."
 license = "BSD-3-Clause"
@@ -13,7 +14,7 @@ documentation = "https://docs.rs/smartpasslib"
 
 [dependencies]
 sha2 = "0.10"
-rand = "0.8"
+rand = "0.9"
 hex = "0.4"
 thiserror = "2.0"
 serde = { version = "1.0", features = ["derive"] }

@@ -152,12 +152,12 @@ pub fn generate_smart_password_sync(secret: &str, length: usize) -> Result<Strin
 pub fn generate_strong_password(length: usize) -> Result<String> {
     validate_password_length(length)?;
 
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
     let chars = CHARS.as_bytes();
     let mut result = String::with_capacity(length);
 
     for _ in 0..length {
-        let idx = rng.gen_range(0..chars.len());
+        let idx = rng.random_range(0..chars.len());
         result.push(chars[idx] as char);
     }
 
@@ -173,12 +173,12 @@ pub fn generate_base_password(length: usize) -> Result<String> {
 pub fn generate_code(length: usize) -> Result<String> {
     validate_code_length(length)?;
 
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
     let chars = CHARS.as_bytes();
     let mut result = String::with_capacity(length);
 
     for _ in 0..length {
-        let idx = rng.gen_range(0..chars.len());
+        let idx = rng.random_range(0..chars.len());
         result.push(chars[idx] as char);
     }
 
