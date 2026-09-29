@@ -1,4 +1,4 @@
-# smartpasslib (Rust) <sup>v4.0.0</sup>
+# smartpasslib (Rust)
 
 [![Crates.io](https://img.shields.io/crates/v/smartpasslib)](https://crates.io/crates/smartpasslib)
 [![Documentation](https://docs.rs/smartpasslib/badge.svg)](https://docs.rs/smartpasslib)
@@ -74,10 +74,10 @@
 
 **Key derivation (same as Python/JS/Kotlin/Go/C# versions v4.0.0):**
 
-| Key Type | Iterations | Purpose |
-|----------|------------|---------|
+| Key Type    | Iterations      | Purpose                                               |
+|-------------|-----------------|-------------------------------------------------------|
 | Private Key | 15-30 (dynamic) | Password generation (never stored, never transmitted) |
-| Public Key | 45-60 (dynamic) | Verification (stored locally) |
+| Public Key  | 45-60 (dynamic) | Verification (stored locally)                         |
 
 **Character Set:** `!@#$%^&*()_+-=[]{};:,.<>?/ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz`
 
@@ -157,28 +157,28 @@ manager.delete(&public_key).unwrap();
 
 ### Constants
 
-| Constant | Type | Description |
-|----------|------|-------------|
-| `VERSION` | &str | Library version (4.0.0) |
-| `CHARS` | &str | Character set used for generation |
+| Constant  | Type | Description                       |
+|-----------|------|-----------------------------------|
+| `VERSION` | &str | Library version (4.0.0)           |
+| `CHARS`   | &str | Character set used for generation |
 
 ### Functions
 
-| Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `generate_private_key(secret)` | secret: &str | Result\<String, Error\> | Private key (15-30 iterations) |
-| `generate_public_key(secret)` | secret: &str | Result\<String, Error\> | Public key (45-60 iterations) |
-| `verify_secret(secret, public_key)` | secret, public_key | Result\<bool, Error\> | Verify secret matches public key |
-| `generate_smart_password_sync(secret, length)` | secret, length | Result\<String, Error\> | Deterministic password |
-| `generate_strong_password(length)` | length: usize | Result\<String, Error\> | Cryptographically random |
-| `generate_base_password(length)` | length: usize | Result\<String, Error\> | Simple random password |
-| `generate_code(length)` | length: usize | Result\<String, Error\> | Short code (4-100 chars) |
+| Function                                       | Parameters         | Returns                 | Description                      |
+|------------------------------------------------|--------------------|-------------------------|----------------------------------|
+| `generate_private_key(secret)`                 | secret: &str       | Result\<String, Error\> | Private key (15-30 iterations)   |
+| `generate_public_key(secret)`                  | secret: &str       | Result\<String, Error\> | Public key (45-60 iterations)    |
+| `verify_secret(secret, public_key)`            | secret, public_key | Result\<bool, Error\>   | Verify secret matches public key |
+| `generate_smart_password_sync(secret, length)` | secret, length     | Result\<String, Error\> | Deterministic password           |
+| `generate_strong_password(length)`             | length: usize      | Result\<String, Error\> | Cryptographically random         |
+| `generate_base_password(length)`               | length: usize      | Result\<String, Error\> | Simple random password           |
+| `generate_code(length)`                        | length: usize      | Result\<String, Error\> | Short code (4-100 chars)         |
 
 ### Classes
 
-| Class | Description |
-|-------|-------------|
-| `SmartPassword` | Metadata container (public_key, description, length) |
+| Class                  | Description                                          |
+|------------------------|------------------------------------------------------|
+| `SmartPassword`        | Metadata container (public_key, description, length) |
 | `SmartPasswordManager` | Persistent storage for password metadata (JSON file) |
 
 ---
@@ -260,14 +260,14 @@ cargo doc --open
 The same deterministic algorithm is available in multiple languages.
 SmartPassLib Rust produces **identical passwords** to:
 
-| Language | Repository |
-|----------|------------|
-| Python | [smartpasslib](https://github.com/smartlegionlab/smartpasslib) |
-| JavaScript | [smartpasslib-js](https://github.com/smartlegionlab/smartpasslib-js) |
-| Kotlin | [smartpasslib-kotlin](https://github.com/smartlegionlab/smartpasslib-kotlin) |
-| Go | [smartpasslib-go](https://github.com/smartlegionlab/smartpasslib-go) |
-| C# | [smartpasslib-csharp](https://github.com/smartlegionlab/smartpasslib-csharp) |
-| **Rust** | **smartpasslib** (this) |
+| Language   | Repository                                                                   |
+|------------|------------------------------------------------------------------------------|
+| Python     | [smartpasslib](https://github.com/smartlegionlab/smartpasslib)               |
+| JavaScript | [smartpasslib-js](https://github.com/smartlegionlab/smartpasslib-js)         |
+| Kotlin     | [smartpasslib-kotlin](https://github.com/smartlegionlab/smartpasslib-kotlin) |
+| Go         | [smartpasslib-go](https://github.com/smartlegionlab/smartpasslib-go)         |
+| C#         | [smartpasslib-csharp](https://github.com/smartlegionlab/smartpasslib-csharp) |
+| **Rust**   | **smartpasslib** (this)                                                      |
 
 ---
 
