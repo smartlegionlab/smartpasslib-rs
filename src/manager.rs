@@ -189,10 +189,10 @@ impl SmartPasswordManager {
 
     /// Save data to file.
     fn save_data(&self) -> Result<()> {
-        if let Some(parent) = self.filename.parent()
-            && !parent.exists()
-        {
-            fs::create_dir_all(parent)?;
+        if let Some(parent) = self.filename.parent() {
+            if !parent.exists() {
+                fs::create_dir_all(parent)?;
+            }
         }
 
         let json = serde_json::to_string_pretty(&self.passwords)?;
